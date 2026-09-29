@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Postcraft Studio - Social media content, creative design and branding for businesses.">
+
+<title>POSTCRAFT STUDIO | Creative Agency</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root{
+  --bg:#090909;
+  --panel:#12110f;
+  --gold:#d9ad60;
+  --cream:#f7f4ee;
+  --muted:#aaa49a;
+  --border:#393126;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:85px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+.container{
+  width:min(1120px,90%);
+  margin:auto;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+h1,
+h2,
+h3{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  line-height:1.2;
+}
+
+/* NAVIGATION */
+
+header{
+  height:76px;
+  border-bottom:1px solid #29251f;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,9,9,.97);
+  backdrop-filter:blur(12px);
+}
+
+.nav{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.logo-icon{
+  width:39px;
+  height:39px;
+  border:1px solid var(--gold);
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font:27px 'Playfair Display',serif;
+}
+
+.logo-name{
+  font:19px 'Playfair Display',serif;
+  letter-spacing:1px;
+  line-height:1.1;
+}
+
+.logo-small{
+  font-size:9px;
+  letter-spacing:6px;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+.btn{
+  border:1px solid var(--gold);
+  color:var(--cream);
+  background:transparent;
+  border-radius:30px;
+  padding:11px 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  cursor:pointer;
+  transition:.25s;
+  font-size:13px;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:#111;
+  transform:translateY(-2px);
+}
+
+.btn-filled{
+  background:var(--gold);
+  color:#111;
+  font-weight:700;
+}
+
+.btn-filled:hover{
+  background:#f1d49b;
+}
+
+.menu-btn{
+  display:none;
+  border:1px solid var(--border);
+  background:none;
+  color:var(--gold);
+  font-size:24px;
+  padding:2px 11px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+  min-height:550px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:30px;
+  padding:65px 0 75px;
+}
+
+h1{
+  font-size:clamp(39px,5.3vw,66px);
+  margin:20px 0;
+}
+
+h1 em{
+  color:var(--gold);
+  font-weight:500;
+}
+
+.hero-text{
+  color:#c8c4bd;
+  max-width:510px;
+  font-size:14px;
+  margin-bottom:26px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
+
+.socials{
+  display:flex;
+  gap:20px;
+  margin-top:30px;
+  color:var(--gold);
+  font-size:16px;
+}
+
+.hero-art{
+  min-height:410px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.glow{
+  position:absolute;
+  width:260px;
+  height:260px;
+  background:#b17a27;
+  filter:blur(110px);
+  opacity:.2;
+}
+
+.phone{
+  width:230px;
+  height:390px;
+  border:2px solid #a9874e;
+  background:#080808;
+  border-radius:32px;
+  padding:12px;
+  transform:rotate(-5deg);
+  position:relative;
+  z-index:2;
+  box-shadow:0 20px 80px #000;
+}
+
+.phone-top{
+  height:24px;
+  display:flex;
+  justify-content:center;
+}
+
+.phone-speaker{
+  height:5px;
+  width:50px;
+  background:#444;
+  border-radius:20px;
+}
+
+.phone-screen{
+  background:#eee5d7;
+  color:#211c16;
+  height:330px;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.phone-header{
+  padding:12px;
+  font-size:10px;
+  font-weight:700;
+  border-bottom:1px solid #d4cbbb;
+}
+
+.phone-photo{
+  height:175px;
+  background:
+  linear-gradient(
+    145deg,
+    transparent 45%,
+    #667a48 46%,
+    #2f4328 70%,
+    transparent 71%
+  ),
+  linear-gradient(
+    35deg,
+    #cbb89b,
+    #eee3d2 55%,
+    #a48b6e
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.phone-photo span{
+  font:29px 'Playfair Display',serif;
+  text-align:center;
+  line-height:1.1;
+}
+
+.phone-caption{
+  padding:12px;
+  font-size:10px;
+}
+
+.floating-card{
+  position:absolute;
+  width:145px;
+  padding:14px;
+  background:#171512;
+  border:1px solid #8d713f;
+  border-radius:5px;
+  box-shadow:0 15px 35px #000;
+  font:19px/1.2 'Playfair Display',serif;
+}
+
+.floating-card small{
+  display:block;
+  color:#b7a88f;
+  font:9px 'DM Sans',sans-serif;
+  margin-top:10px;
+}
+
+.card-one{
+  left:0;
+  top:65px;
+  transform:rotate(-5deg);
+}
+
+.card-two{
+  right:0;
+  bottom:55px;
+  transform:rotate(5deg);
+}
+
+/* SECTIONS */
+
+section{
+  padding:75px 0;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-heading h2{
+  font-size:clamp(28px,4vw,40px);
+  margin:10px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.services,
+.pricing,
+.testimonials,
+.faq{
+  background:#0c0c0b;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service{
+  text-align:center;
+  padding:15px 8px 25px;
+}
+
+.service-icon{
+  width:58px;
+  height:58px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin:0 auto 18px;
+  color:var(--gold);
+  font-size:23px;
+}
+
+.service h3{
+  font-size:19px;
+  margin-bottom:9px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* PORTFOLIO */
+
+.portfolio-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.5fr;
+  align-items:center;
+  gap:45px;
+}
+
+.portfolio-intro h2{
+  font-size:38px;
+  margin:12px 0;
+}
+
+.portfolio-intro p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.work{
+  min-height:190px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #4b3c29;
+  background:#1d1813;
+}
+
+.work:nth-child(2){
+  background:#d8c8b1;
+  color:#292116;
+}
+
+.work:nth-child(3){
+  background:#33251b;
+}
+
+.work:nth-child(4){
+  background:#ead7d0;
+  color:#38231f;
+}
+
+.work small{
+  font-size:9px;
+  letter-spacing:2px;
+  opacity:.8;
+}
+
+.work strong{
+  font:27px/1.1 'Playfair Display',serif;
+  max-width:160px;
+  position:relative;
+  z-index:1;
+}
+
+.work span{
+  font-size:10px;
+}
+
+.decor{
+  position:absolute;
+  right:-15px;
+  bottom:-35px;
+  font-size:105px;
+  opacity:.16;
+}
+
+/* PRICING */
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.price-card{
+  border:1px solid #55452f;
+  border-radius:7px;
+  padding:26px 23px;
+  display:flex;
+  flex-direction:column;
+  background:#0c0c0b;
+}
+
+.price-card.featured{
+  border:2px solid var(--gold);
+  position:relative;
+}
+
+.popular{
+  background:var(--gold);
+  color:#17120b;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:700;
+  padding:5px 16px;
+  text-align:center;
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+
+.price-card h3{
+  font-size:23px;
+}
+
+.desc{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.price{
+  font:31px 'Playfair Display',serif;
+  margin:14px 0;
+}
+
+.price small{
+  font:12px 'DM Sans',sans-serif;
+  color:var(--muted);
+}
+
+.features{
+  list-style:none;
+  margin-bottom:23px;
+  flex:1;
+}
+
+.features li{
+  font-size:12px;
+  margin:10px 0;
+  color:#dedbd5;
+}
+
+.features li::before{
+  content:"✓";
+  color:var(--gold);
+  margin-right:9px;
+}
+
+.price-card .btn{
+  width:100%;
+}
+
+.note{
+  color:#9e988d;
+  font-size:11px;
+  text-align:center;
+  margin-top:20px;
+}
+
+/* TESTIMONIALS */
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.quote{
+  padding:22px;
+  border:1px solid var(--border);
+  background:#111;
+  border-radius:7px;
+}
+
+.stars{
+  color:var(--gold);
+  letter-spacing:3px;
+  margin-bottom:12px;
+}
+
+.quote p{
+  font-size:13px;
+  color:#ddd;
+  margin-bottom:18px;
+}
+
+.quote strong{
+  font-size:12px;
+}
+
+.quote small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+/* FAQ */
+
+.faq-list{
+  max-width:780px;
+  margin:auto;
+}
+
+.faq-item{
+  border-bottom:1px solid var(--border);
+  padding:17px 2px;
+}
+
+.faq-item summary{
+  cursor:pointer;
+  list-style:none;
+  font:18px 'Playfair Display',serif;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary:after{
+  content:"+";
+  float:right;
+  color:var(--gold);
+  font:22px 'DM Sans',sans-serif;
+}
+
+.faq-item[open] summary:after{
+  content:"−";
+}
+
+.faq-item p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:start;
+}
+
+.contact-copy h2{
+  font-size:40px;
+  margin:12px 0;
+}
+
+.contact-copy p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.gold{
+  color:var(--gold);
+}
+
+.contact-methods{
+  display:grid;
+  gap:12px;
+  margin-top:25px;
+}
+
+.contact-method{
+  display:flex;
+  gap:13px;
+  align-items:center;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:7px;
+  background:#111;
+}
+
+.method-icon{
+  width:40px;
+  height:40px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font-size:17px;
+}
+
+.contact-method small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.contact-method strong{
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+
+.contact-form{
+  border:1px solid var(--border);
+  background:var(--panel);
+  padding:25px;
+  border-radius:8px;
+}
+
+.contact-form label{
+  display:block;
+  font-size:12px;
+  margin:12px 0 6px;
+  color:#e9e3d9;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+  width:100%;
+  padding:12px;
+  border:1px solid #38332b;
+  background:#090909;
+  color:var(--cream);
+  border-radius:5px;
+  outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{
+  border-color:var(--gold);
+}
+
+.contact-form textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.form-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+
+.form-actions button{
+  width:100%;
+  padding:12px 8px;
+}
+
+#form-message{
+  color:var(--gold);
+  font-size:12px;
+  margin-top:13px;
+  min-height:20px;
+}
+
+.form-note{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--border);
+  padding:25px 0;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links{
+  display:flex;
+  gap:17px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.copyright{
+  font-size:10px;
+  color:var(--muted);
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  background:#1fa855;
+  color:white;
+  border-radius:40px;
+  padding:12px 18px;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:0 5px 25px #0008;
+}
+
+.whatsapp-float:hover{
+  background:#168843;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    width:100%;
+    background:#0b0b0a;
+    border-bottom:1px solid var(--border);
+    padding:22px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:17px;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav>.btn{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:55px 0 30px;
+    gap:5px;
+  }
+
+  .hero-art{
+    min-height:360px;
+  }
+
+  .phone{
+    transform:scale(.88) rotate(-5deg);
+  }
+
+  .card-one{
+    left:0;
+    top:55px;
+  }
+
+  .card-two{
+    right:0;
+    bottom:35px;
+  }
+
+  section{
+    padding:58px 0;
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .portfolio-layout{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .portfolio-intro h2{
+    font-size:32px;
+  }
+
+  .work{
+    min-height:160px;
+  }
+
+  .work strong{
+    font-size:23px;
+  }
+
+  .pricing-grid,
+  .testimonial-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .price-card{
+    padding:25px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .contact-copy h2{
+    font-size:34px;
+  }
+}
+
+@media(max-width:390px){
+
+  .logo-name{
+    font-size:16px;
+  }
+
+  .logo-small{
+    letter-spacing:4px;
+  }
+
+  .floating-card{
+    width:115px;
+    font-size:16px;
+    padding:10px;
+  }
+
+  .work{
+    min-height:140px;
+    padding:12px;
+  }
+
+  .work strong{
+    font-size:20px;
+  }
+
+  .hero-art{
+    min-height:320px;
+  }
+
+  .phone{
+    transform:scale(.78) rotate(-5deg);
+  }
+
+  .form-actions{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="logo">
+
+      <div class="logo-icon">P</div>
+
+      <div>
+        <div class="logo-name">POSTCRAFT</div>
+        <div class="logo-small">STUDIO</div>
+      </div>
+
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+
+    </nav>
+
+    <a href="#contact" class="btn">
+      Get Started →
+    </a>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="container hero" id="home">
+
+  <div>
+
+    <div class="eyebrow">
+      IDEAS + DESIGN + ENGAGE
+    </div>
+
+    <h1>
+      Social Media Content
+      <em>That Builds Your Brand</em>
+    </h1>
+
+    <p class="hero-text">
+      At Postcraft Studio, we create scroll-stopping social media
+      posts, captions and content calendars that help small
+      businesses grow, get noticed and turn followers into customers.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-filled" href="#contact">
+        Get Started →
+      </a>
+
+      <a class="btn" href="#portfolio">
+        View Our Work
+      </a>
+
+    </div>
+
+    <div class="socials">
+      <span>◎</span>
+      <span>♪</span>
+      <span>f</span>
+      <span>in</span>
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+
+    <div class="glow"></div>
+
+    <div class="floating-card card-one">
+      Good Food<br>
+      Good Mood
+      <small>Freshly brewed every day</small>
+    </div>
+
+    <div class="phone">
+
+      <div class="phone-top">
+        <div class="phone-speaker"></div>
+      </div>
+
+      <div class="phone-screen">
+
+        <div class="phone-header">
+          ◎ &nbsp; postcraft.studio
+        </div>
+
+        <div class="phone-photo">
+          <span>
+            Small<br>
+            Business<br>
+            Big Dreams
+          </span>
+        </div>
+
+        <div class="phone-caption">
+          Let's grow together ✨
+          <br><br>
+          ♡ &nbsp; ◯ &nbsp; ➤
+          <br><br>
+          <b>1,234 likes</b>
+          <br>
+          Your brand deserves content that works.
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="floating-card card-two">
+      Healthy<br>
+      Choices<br>
+      Happier You
+      <small>Fresh. Simple. Beautiful.</small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        OUR SERVICES
+      </div>
+
+      <h2>
+        Everything You Need for a Strong Online Presence
+      </h2>
+
+      <p>
+        Creative solutions for businesses ready to grow.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <article class="service">
+
+        <div class="service-icon">▧</div>
+
+        <h3>
+          Social Media Posts
+        </h3>
+
+        <p>
+          Eye-catching designs for Instagram, Facebook, TikTok and more.
+        </p>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-icon">T</div>
+
+        <h3>
+          Captions & Hashtags
+        </h3>
+
+        <p>
+          Creative, brand-aligned captions that encourage engagement.
+        </p>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-icon">▦</div>
+
+        <h3>
+          Content Calendars
+        </h3>
+
+        <p>
+          Plan your content easily with monthly calendars.
+        </p>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-icon">✧</div>
+
+        <h3>
+          Brand Design
+        </h3>
+
+        <p>
+          Custom templates and visual styles for a consistent look.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+  <div class="container portfolio-layout">
+
+    <div class="portfolio-intro">
+
+      <div class="eyebrow">
+        OUR PORTFOLIO
+      </div>
+
+      <h2>
+        A Glimpse of Our Work
+      </h2>
+
+      <p>
+        Explore sample concepts for businesses.
+        We create content that looks good and works.
+      </p>
+
+      <a href="#contact" class="btn">
+        Request a Design →
+      </a>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+      <article class="work">
+
+        <small>
+          BAKERY / SOCIAL POST
+        </small>
+
+        <strong>
+          Fresh<br>
+          Bakes<br>
+          Daily
+        </strong>
+
+        <span>
+          Order Now →
+        </span>
+
+        <div class="decor">✿</div>
+
+      </article>
+
+
+      <article class="work">
+
+        <small>
+          FASHION / CAMPAIGN
+        </small>
+
+        <strong>
+          New<br>
+          Collection
+        </strong>
+
+        <span>
+          Shop Now →
+        </span>
+
+        <div class="decor">✧</div>
+
+      </article>
+
+
+      <article class="work">
+
+        <small>
+          COFFEE / BRANDING
+        </small>
+
+        <strong>
+          Better Coffee<br>
+          Brighter Days
+        </strong>
+
+        <span>
+          Discover More →
+        </span>
+
+        <div class="decor">☕</div>
+
+      </article>
+
+
+      <article class="work">
+
+        <small>
+          BEAUTY / PROMOTION
+        </small>
+
+        <strong>
+          Glow<br>
+          Naturally
+        </strong>
+
+        <span>
+          Shop the edit →
+        </span>
+
+        <div class="decor">✿</div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section class="pricing" id="pricing">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        PRICING
+      </div>
+
+      <h2>
+        Choose Your Plan
+      </h2>
+
+      <p>
+        Simple packages for different business needs.
+      </p>
+
+    </div>
+
+
+    <div class="pricing-grid">
+
+
+      <!-- BASIC -->
+
+      <article class="price-card">
+
+        <h3>
+          Basic
+        </h3>
+
+        <p class="desc">
+          For getting started
+        </p>
+
+        <div class="price">
+          Rs. 5,000
+          <small>/ month</small>
+        </div>
+
+        <ul class="features">
+
+          <li>
+            8 social media posts
+          </li>
+
+          <li>
+            Basic captions
+          </li>
+
+          <li>
+            Hashtag suggestions
+          </li>
+
+          <li>
+            One revision per post
+          </li>
+
+        </ul>
+
+        <button
+          class="btn choose-plan"
+          data-plan="Basic">
+
+          Choose Basic
+
+        </button>
+
+      </article>
+
+
+      <!-- STANDARD -->
+
+      <article class="price-card featured">
+
+        <div class="popular">
+          MOST POPULAR
+        </div>
+
+        <h3>
+          Standard
+        </h3>
+
+        <p class="desc">
+          For growing businesses
+        </p>
+
+        <div class="price">
+          Rs. 10,000
+          <small>/ month</small>
+        </div>
+
+        <ul class="features">
+
+          <li>
+            12 social media posts
+          </li>
+
+          <li>
+            Captions & hashtags
+          </li>
+
+          <li>
+            Monthly content calendar
+          </li>
+
+          <li>
+            Two revisions per post
+          </li>
+
+          <li>
+            Story design concepts
+          </li>
+
+        </ul>
+
+        <button
+          class="btn btn-filled choose-plan"
+          data-plan="Standard">
+
+          Choose Standard
+
+        </button>
+
+      </article>
+
+
+      <!-- PREMIUM -->
+
+      <article class="price-card">
+
+        <h3>
+          Premium
+        </h3>
+
+        <p class="desc">
+          For a complete content plan
+        </p>
+
+        <div class="price">
+          Rs. 18,000
+          <small>/ month</small>
+        </div>
+
+        <ul class="features">
+
+          <li>
+            20 social media posts
+          </li>
+
+          <li>
+            Captions & hashtags
+          </li>
+
+          <li>
+            Monthly content calendar
+          </li>
+
+          <li>
+            Story design concepts
+          </li>
+
+          <li>
+            Priority communication
+          </li>
+
+        </ul>
+
+        <button
+          class="btn choose-plan"
+          data-plan="Premium">
+
+          Choose Premium
+
+        </button>
+
+      </article>
+
+    </div>
+
+
+    <p class="note">
+      Sample packages and prices.
+      Final details can be discussed before starting.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials" id="testimonials">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        KIND WORDS
+      </div>
+
+      <h2>
+        What Clients Could Say
+      </h2>
+
+      <p>
+        Example review cards — replace these with real client feedback.
+      </p>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+
+      <article class="quote">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “The designs look polished and make our brand feel more consistent.”
+        </p>
+
+        <strong>
+          Sample Client
+        </strong>
+
+        <small>
+          Small Business Owner
+        </small>
+
+      </article>
+
+
+      <article class="quote">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “The content calendar makes it easier for us to plan our posts.”
+        </p>
+
+        <strong>
+          Sample Client
+        </strong>
+
+        <small>
+          Online Store
+        </small>
+
+      </article>
+
+
+      <article class="quote">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “A creative approach and a clear process from start to finish.”
+        </p>
+
+        <strong>
+          Sample Client
+        </strong>
+
+        <small>
+          Local Brand
+        </small>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="faq" id="faq">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        FAQ
+      </div>
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <p>
+        Some helpful details before you get started.
+      </p>
+
+    </div>
+
+
+    <div class="faq-list">
+
+
+      <details class="faq-item">
+
+        <summary>
+          How do I get started?
+        </summary>
+
+        <p>
+          Choose a package or send an inquiry using the contact form.
+          We can discuss your goals and requirements.
+        </p>
+
+      </details>
+
+
+      <details class="faq-item">
+
+        <summary>
+          Can I request a custom package?
+        </summary>
+
+        <p>
+          Yes. Select “Not Sure Yet” in the form and describe what you need.
+        </p>
+
+      </details>
+
+
+      <details class="faq-item">
+
+        <summary>
+          How do revisions work?
+        </summary>
+
+        <p>
+          Revision limits depend on the selected package.
+          We can confirm the details before beginning a project.
+        </p>
+
+      </details>
+
+
+      <details class="faq-item">
+
+        <summary>
+          Do you manage social media accounts?
+        </summary>
+
+        <p>
+          This sample website focuses on content creation.
+          Ask about account management when you contact us.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container contact-grid">
+
+    <div class="contact-copy">
+
+      <div class="eyebrow">
+        LET'S WORK TOGETHER
+      </div>
+
+      <h2>
+        Ready to Make Your Brand
+        <span class="gold">Stand Out?</span>
+      </h2>
+
+      <p>
+        Tell us about your business and what you need.
+        Choose WhatsApp or email to send your inquiry.
+      </p>
+
+
+      <div class="contact-methods">
+
+        <a
+          class="contact-method"
+          href="mailto:toobaazam888@gmail.com">
+
+          <div class="method-icon">
+            ✉
+          </div>
+
+          <div>
+
+            <small>
+              EMAIL US
+            </small>
+
+            <strong>
+              toobaazam888@gmail.com
+            </strong>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="contact-method"
+          href="https://wa.me/923156989995"
+          target="_blank"
+          rel="noopener">
+
+          <div class="method-icon">
+            ◉
+          </div>
+
+          <div>
+
+            <small>
+              WHATSAPP
+            </small>
+
+            <strong>
+              +92 315 6989995
+            </strong>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <form
+      class="contact-form"
+      id="contactForm">
+
+
+      <label for="name">
+        Your Name *
+      </label>
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required>
+
+
+      <label for="business">
+        Business Name *
+      </label>
+
+      <input
+        type="text"
+        id="business"
+        name="business"
+        placeholder="Your business name"
+        required>
+
+
+      <label for="service">
+        What do you need? *
+      </label>
+
+      <select
+        id="service"
+        name="service"
+        required>
+
+        <option value="">
+          Select a service
+        </option>
+
+        <option value="Social Media Posts">
+          Social Media Posts
+        </option>
+
+        <option value="Captions & Hashtags">
+          Captions & Hashtags
+        </option>
+
+        <option value="Content Calendar">
+          Content Calendar
+        </option>
+
+        <option value="Brand Design">
+          Brand Design
+        </option>
+
+        <option value="Not Sure Yet">
+          Not Sure Yet
+        </option>
+
+      </select>
+
+
+      <label for="plan">
+        Preferred Package
+      </label>
+
+      <select
+        id="plan"
+        name="plan">
+
+        <option value="">
+          Select a package
+        </option>
+
+        <option value="Basic - Rs. 5,000">
+          Basic — Rs. 5,000
+        </option>
+
+        <option value="Standard - Rs. 10,000">
+          Standard — Rs. 10,000
+        </option>
+
+        <option value="Premium - Rs. 18,000">
+          Premium — Rs. 18,000
+        </option>
+
+        <option value="Custom Package">
+          Custom Package
+        </option>
+
+      </select>
+
+
+      <label for="message">
+        Tell us about your project *
+      </label>
+
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Tell us what you need..."
+        required></textarea>
+
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="btn btn-filled"
+          id="whatsappBtn">
+
+          WhatsApp →
+
+        </button>
+
+
+        <button
+          type="button"
+          class="btn"
+          id="emailBtn">
+
+          Email →
+
+        </button>
+
+      </div>
+
+
+      <div id="form-message"></div>
+
+
+      <p class="form-note">
+        Please complete all required fields before sending your inquiry.
+      </p>
+
+
+    </form>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+
+</main>
+
+<footer>
+
+  <div class="container footer-row">
+
+    <div>
+
+      <div class="logo-name">
+        POSTCRAFT
+      </div>
+
+      <div class="logo-small">
+        STUDIO
+      </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#portfolio">
+        Portfolio
+      </a>
+
+      <a href="#pricing">
+        Pricing
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Postcraft Studio. All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/923156989995"
+  target="_blank"
+  rel="noopener">
+
+  WhatsApp
+
+</a>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+
+/* MOBILE MENU */
+
+if(menuBtn){
+
+  menuBtn.addEventListener("click", function(){
+
+    navLinks.classList.toggle("open");
+
+    const isOpen =
+      navLinks.classList.contains("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+    menuBtn.textContent =
+      isOpen ? "×" : "☰";
+
+  });
+
+}
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+      navLinks.classList.remove("open");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuBtn.textContent = "☰";
+
+    });
+
+  });
+
+
+/* CONTACT FORM */
+
+const form =
+  document.getElementById("contactForm");
+
+const nameInput =
+  document.getElementById("name");
+
+const businessInput =
+  document.getElementById("business");
+
+const serviceInput =
+  document.getElementById("service");
+
+const planInput =
+  document.getElementById("plan");
+
+const messageInput =
+  document.getElementById("message");
+
+const whatsappBtn =
+  document.getElementById("whatsappBtn");
+
+const emailBtn =
+  document.getElementById("emailBtn");
+
+const formMessage =
+  document.getElementById("form-message");
+
+
+/* VALIDATE FORM */
+
+function validateForm(){
+
+  if(
+    nameInput.value.trim() === "" ||
+    businessInput.value.trim() === "" ||
+    serviceInput.value === "" ||
+    messageInput.value.trim() === ""
+  ){
+
+    formMessage.textContent =
+      "Please complete all required fields.";
+
+    return false;
+
+  }
+
+  return true;
+
+}
+
+
+/* WHATSAPP */
+
+whatsappBtn.addEventListener(
+  "click",
+  function(){
+
+    if(!validateForm()) return;
+
+
+    const name =
+      nameInput.value.trim();
+
+    const business =
+      businessInput.value.trim();
+
+    const service =
+      serviceInput.value;
+
+    const plan =
+      planInput.value ||
+      "Not selected";
+
+    const message =
+      messageInput.value.trim();
+
+
+    const whatsappMessage =
+`Hello Postcraft Studio!
+
+I would like to make an inquiry.
+
+Name: ${name}
+Business: ${business}
+Service: ${service}
+Package: ${plan}
+
+Project Details:
+${message}
+
+Thank you!`;
+
+
+    const whatsappURL =
+      "https://wa.me/923156989995?text=" +
+      encodeURIComponent(whatsappMessage);
+
+
+    formMessage.textContent =
+      "Opening WhatsApp — please review your message.";
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+);
+
+
+/* EMAIL */
+
+emailBtn.addEventListener(
+  "click",
+  function(){
+
+    if(!validateForm()) return;
+
+
+    const name =
+      nameInput.value.trim();
+
+    const business =
+      businessInput.value.trim();
+
+    const service =
+      serviceInput.value;
+
+    const plan =
+      planInput.value ||
+      "Not selected";
+
+    const message =
+      messageInput.value.trim();
+
+
+    const subject =
+      "Postcraft Studio Inquiry - " +
+      business;
+
+
+    const body =
+`Hello Postcraft Studio,
+
+I would like to make an inquiry.
+
+Name: ${name}
+Business: ${business}
+Service: ${service}
+Package: ${plan}
+
+Project Details:
+${message}
+
+Thank you!`;
+
+
+    const mailtoURL =
+      "mailto:toobaazam888@gmail.com" +
+      "?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+
+
+    formMessage.textContent =
+      "Opening your email app...";
+
+
+    window.location.href =
+      mailtoURL;
+
+  }
+);
+
+
+/* CHOOSE PACKAGE */
+
+document
+  .querySelectorAll(".choose-plan")
+  .forEach(function(button){
+
+    button.addEventListener(
+      "click",
+      function(){
+
+        const selectedPlan =
+          button.getAttribute("data-plan");
+
+        planInput.value =
+          selectedPlan;
+
+
+        document
+          .getElementById("contact")
+          .scrollIntoView({
+            behavior:"smooth"
+          });
+
+      }
+    );
+
+  });
+
+
+/* CLEAR ERROR MESSAGE */
+
+[
+  nameInput,
+  businessInput,
+  serviceInput,
+  messageInput
+].forEach(function(field){
+
+  field.addEventListener(
+    "input",
+    function(){
+
+      formMessage.textContent = "";
+
+    }
+  );
+
+});
+
+</script>
+
+</body>
+</html>
